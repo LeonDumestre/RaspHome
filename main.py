@@ -4,7 +4,6 @@ from date_utils import *
 
 # System settings
 customtkinter.set_appearance_mode("dark")
-customtkinter.set_default_color_theme("darkred")
 
 # App frame
 app = customtkinter.CTk()
