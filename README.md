@@ -3,7 +3,24 @@
 ## Présentation
 
 Logiciel personnalisé pour un Raspberry Pi 4
-Conçu pour être affiché sur un écran tactile 7 pouces (640x480)
+
+Il est conçu pour être affiché sur un écran tactile 7 pouces (640x480)
+
+## Installation
+
+Installer les packages nécessaires :
+```bash
+sudo apt-get install python3-pip
+pip install cusromtkinter
+```
+
+Créer un fichier `config.py` dans le dossier `api`.
+Ce fichier stocke les différentes clés API.
+Puis y ajouter ces lignes en remplaçant les clés API :
+```python
+# https://weatherstack.com/
+WEATHER_STACK_API_KEY="<API_KEY>"
+```
 
 ## Fonctionnalités
 - Affichage de l'heure et de la date
@@ -15,3 +32,5 @@ Conçu pour être affiché sur un écran tactile 7 pouces (640x480)
 - Affichage du débit Internet
 - Affichage d'informations concernant un futur cloud
 - Affichage de statistiques
+- Affichage des anniversaires
+- Affichage de la météo / température extérieure

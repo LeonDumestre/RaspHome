@@ -160,3 +160,4 @@ cython_debug/
 #.idea/
 
 .idea/*
+api/config.py
