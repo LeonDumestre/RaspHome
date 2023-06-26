@@ -12,14 +12,16 @@ Installer les packages nécessaires :
 ```bash
 sudo apt-get install python3-pip
 pip install cusromtkinter
+pip install requests
 ```
 
 Créer un fichier `config.py` dans le dossier `api`.
 Ce fichier stocke les différentes clés API.
-Puis y ajouter ces lignes en remplaçant les clés API :
+Puis y ajouter ces lignes en remplaçant les valeurs `<>` :
 ```python
 # https://weatherstack.com/
 WEATHER_STACK_API_KEY="<API_KEY>"
+WEATHER_STACK_CITY="<CITY>"
 ```
 
 ## Fonctionnalités

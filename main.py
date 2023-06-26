@@ -1,6 +1,10 @@
 import customtkinter as ctk
+
+from api.weather.weather_stack import run_weather_stack_api_loop
 from utils.date_utils import *
 from themes.color import *
+
+run_weather_stack_api_loop()
 
 # System settings
 ctk.set_appearance_mode("dark")
