@@ -4,16 +4,17 @@ import json
 import os
 
 from api.config import WEATHER_STACK_API_KEY, WEATHER_STACK_CITY
+from utils.api_utils import DATA_DIRECTORY, TEST_API_LINK
+from utils.date_utils import FOUR_HOURS_IN_SEC
 
-FOUR_HOURS_IN_SEC = 4 * 60 * 60
+
 WEATHER_STACK_API_LINK = "http://api.weatherstack.com/forecast?access_key=" + WEATHER_STACK_API_KEY + \
-                         "&query=" + WEATHER_STACK_CITY + "&hourly=1"
-LOGS_DIRECTORY = os.path.join(os.path.dirname(os.path.abspath(__file__)), "logs")
-OUTPUT_FILE = os.path.join(LOGS_DIRECTORY, "weather_data.json")
+                         "&query=" + WEATHER_STACK_CITY
+OUTPUT_FILE = os.path.join(DATA_DIRECTORY + "/weather", "weather_data.json")
 
 
 def call_weather_stack_api():
-    response = requests.get(WEATHER_STACK_API_LINK)
+    response = requests.get(TEST_API_LINK)
     print(response.json())
     if response.status_code == 200:
         save_weather_data(response.json())
@@ -23,7 +24,7 @@ def call_weather_stack_api():
 
 
 def save_weather_data(data):
-    os.makedirs(LOGS_DIRECTORY, exist_ok=True)
+    os.makedirs(DATA_DIRECTORY, exist_ok=True)
     with open(OUTPUT_FILE, 'w') as file:
         json.dump(data, file)
 

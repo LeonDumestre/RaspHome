@@ -161,4 +161,5 @@ cython_debug/
 
 .idea/*
 api/config.py
-api/weather/logs/
+data/*
+!data/README.md
